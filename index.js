@@ -1,4 +1,3 @@
-// index.js
 const express = require('express');
 const http = require('http');
 const WebSocket = require('ws');
@@ -8,9 +7,7 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 app.get('/', (req, res) => {
-  const targetWebSocketUrl = 'wss://socket.pasino.io/dice/'; // Ganti dengan URL WebSocket yang diinginkan
-  res.writeHead(302, { 'Location': targetWebSocketUrl });
-  res.end();
+  res.send('Server WebSocket berjalan!');
 });
 
 wss.on('connection', (ws) => {
@@ -31,5 +28,5 @@ wss.on('connection', (ws) => {
 const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
-  console.log(`Server berjalan di http://localhost:${PORT}`);
+  console.log(`Server WebSocket berjalan di http://localhost:${PORT}`);
 });
