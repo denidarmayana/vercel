@@ -8,7 +8,7 @@ let serverpasino
 const socket = new WebSocket('wss://socket.pasino.io/dice/');
 socket.addEventListener('open', (event) => {
   console.log('Terhubung ke server WebSocket');
-  serverpasino = 'connected'
+  serverpasino = 'connected pasino'
 });
 
 // Handle ketika menerima pesan dari server
